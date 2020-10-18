@@ -1,0 +1,13 @@
+<!doctype html>
+<script>
+//Example using HTML's Location object
+var loc =  window.location; 
+console.log(loc.protocol === "app:"); //true 
+console.log(loc.host === "com.foo.bar"); //true 
+console.log(loc.href === "app://com.foo.bar/index.html"); //true 
+console.log(loc.origin === "app://com.foo.bar"); //true 
+console.log(loc.pathname === "/index.html"); //true 
+console.log(loc.hash === "#example"); //true 
+console.log(loc.port === ""); //true
+</script>
+
