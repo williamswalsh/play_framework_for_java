@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import akka.event.slf4j.Logger;
@@ -17,6 +18,8 @@ public class Product {
 	
 	public String description;
 
+	public List<Tag> tags = new LinkedList<Tag>();
+	
 	public Product() {
 	}
 
@@ -35,10 +38,32 @@ public class Product {
 
 	static {
 		products = new ArrayList<Product>();
-		products.add(new Product("1", "Paperclip 1", "Desc 1"));
-		products.add(new Product("2", "Paperclip 2", "Desc 2"));
-		products.add(new Product("3", "Paperclip 3", "Desc 3"));
-		products.add(new Product("4", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0001", "Paperclip 1", "Desc 1"));
+		products.add(new Product("0002", "Paperclip 2", "Desc 2"));
+		products.add(new Product("0003", "Paperclip 3", "Desc 3"));
+		products.add(new Product("0004", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0005", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0006", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0007", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0008", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0009", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0010", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0011", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0012", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0013", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0014", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0015", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0016", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0017", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0018", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0019", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0020", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0021", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0022", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0023", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0024", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0025", "Paperclip 4", "Desc 4"));
+		products.add(new Product("0026", "Paperclip 4", "Desc 4"));
 	}
 	
 	public static List<Product> findAll(){
@@ -56,13 +81,14 @@ public class Product {
 
 	
 	// TODO - Change to return a list of products
-	public static Product findByName(String name){
+	public static List<Product> findByName(String name){
+		final List<Product> results = new ArrayList<Product>();
 		for(Product product: products) {
 			if(product.name.toLowerCase().equals(name.toLowerCase())) {
-				return product;
+				results.add(product);
 			}
 		}
-		return null;
+		return results;
 	}	
 	
 	public static boolean remove(Product product){
